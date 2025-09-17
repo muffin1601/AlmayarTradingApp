@@ -1,0 +1,152 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Slide transition */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transform: translateX(100%);
+  transition: transform 1s ease-in-out;
+  opacity: 0;
+}
+
+.slide.active {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide.prev {
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Overlay to improve text visibility */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(2, 2, 2, 0.603),
+    rgba(0, 0, 0, 0.541)
+  );
+  z-index: 3;
+}
+
+/* Content */
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  max-width: 1000px;
+  z-index: 3;
+}
+
+/* Entrance animations */
+.content h1,
+.content p,
+.buttons {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.content h1 {
+  font-size: 3.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  animation-delay: 0.2s;
+}
+
+.content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  animation-delay: 0.5s;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CTA Button */
+.cta1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 28px;
+  border-radius: 10px;
+  background: #046d4d;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ctaIcon1 {
+  font-size: 20px;
+  transition: transform 0.3s;
+}
+
+.cta1:hover {
+  background: linear-gradient(90deg, #046d4d, #d35400);
+  border-color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.cta1:hover .ctaIcon1 {
+  transform: translateX(6px);
+}
+
+/* Ghost Button */
+.ghostBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 28px;
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.ghostBtn .ctaIcon2 {
+  font-size: 20px;
+  transition: transform 0.3s;
+}
+
+.ghostBtn:hover .ctaIcon2 {
+  transform: translateX(6px);
+}

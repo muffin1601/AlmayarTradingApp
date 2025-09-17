@@ -1,0 +1,78 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 250px;
+  background: transparent; /* transparent overlay */
+  position: absolute;
+  top: 70px;
+  left: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.295);
+  z-index: 20;
+}
+
+.logo img {
+  height: 100px;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #046d4d; /* Emerald hover */
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 28px;
+  border-radius: 10px;
+  background: #046d4d; 
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ctaIcon {
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.cta:hover {
+  background: linear-gradient(90deg, #046d4d, #d35400); 
+  border-color: #fff; 
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.cta:hover .ctaIcon {
+  transform: translateX(6px); 
+}
