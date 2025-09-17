@@ -1,0 +1,165 @@
+.productSection {
+    border-top: 2px solid #bdbdbd;
+  position: relative;
+  padding: 80px 20px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.topContainer {
+    display: flex;
+    justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+.heading {
+  font-size: 3rem;
+  font-weight: 300;
+  display: flex;
+  justify-content: left;
+  color: #046d4d; 
+  margin-bottom: 15px;
+}
+
+.subheading {
+  font-size: 1.1rem;
+  color: #444;
+  display: flex;
+  justify-content: left;
+  max-width: 100%;
+  text-align: left;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.card {
+  position: relative;
+  border-radius: 0px;
+  overflow: hidden;
+  cursor: pointer;
+  height: auto;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  /* transform: translateY(-5px); */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.imageProduct {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .imageProduct {
+  transform: scale(1.05);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+ opacity: 1;
+  transition: background 0.3s;
+}
+.cardOverlay:hover {
+ background: rgba(0,0,0,0); 
+}
+
+
+.cardOverlay h3 {
+  color: rgba(255, 255, 255, 0.7); /* light white */
+  font-weight: 300;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.cardOverlay button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.cardOverlay button:hover .IconArrow2{
+   transform: translateX(6px);
+}
+
+.cardOverlay button .IconArrow2 {
+  font-size: 20px;
+  transition: transform 0.3s;
+}
+
+.card:hover .cardOverlay h3,
+.card:hover .cardOverlay button {
+  color: #fff; 
+ 
+}
+
+
+
+.downloadBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 28px;
+  border-radius: 10px;
+  background: #046d4d; 
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.downloadBtn:hover {
+  background: linear-gradient(90deg, #046d4d, #d35400); 
+  border-color: #fff; 
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.IconArrow {
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.downloadBtn:hover .IconArrow {
+  transform: translateX(6px); 
+}
+

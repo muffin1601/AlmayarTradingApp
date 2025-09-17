@@ -58,7 +58,7 @@ export default function CompanyOverview() {
           <img
             src="/about.jpg"
             alt="Company Overview"
-            className={styles.image}
+            className={styles.imageAbout}
           />
         </div>
       </div>
