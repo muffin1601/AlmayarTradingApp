@@ -1,10 +1,13 @@
 "use client";
-
+import {  useState } from "react";
 import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi"; 
 import styles from "../styles/NavbarMain.module.css";
+import EnquiryModal from "./EnquiryModal";
 
 export default function NavbarMain() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className={styles.navbar}>
       {/* Logo */}
@@ -23,10 +26,11 @@ export default function NavbarMain() {
       </nav>
 
      
-      <Link href="/quote" className={styles.cta}>
+      <button onClick={() => setIsModalOpen(true)} className={styles.cta}>
         Get a Quote <FiArrowRight className={styles.ctaIcon} />
-      </Link>
+      </button>
     </div>
+    <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

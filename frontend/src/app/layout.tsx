@@ -1,8 +1,18 @@
-// app/layout.tsx
-import "./global.css"; // your global CSS
+
+import { Outfit } from 'next/font/google';
+import "./global.css"; 
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import FloatingButtons from '@/components/FloatingButtons';
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+});
 
 export const metadata = {
-  title: "Automotive Site",
+  title: "Al Mayar",
   description: "We supply robust automotive components",
 };
 
@@ -12,16 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    <>
+    <Header />
     <html lang="en">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>
-        {children}
-      </body>
+      <body className={outfit.className}>{children}</body>
     </html>
+    <Footer />
+    <FloatingButtons />
+    </>
   );
 }

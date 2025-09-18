@@ -1,0 +1,190 @@
+.section {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  border-top: 2px solid #bdbdbd;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 300;
+  display: flex;
+  justify-content: left;
+  color: #000000; 
+  margin-bottom: 15px;
+}
+
+.testimonialHeading {
+  font-size: 3rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: left;
+  color: #046d4d; 
+  margin-bottom: 15px;
+}
+
+.newsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.newsCard {
+  position: relative;
+  
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.newsImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.newsCard:hover .newsImage {
+  transform: scale(1.05);
+}
+
+
+.newsCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); 
+  transition: background 0.3s ease;
+  z-index: 1;
+}
+
+
+
+.newsContent {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 4;
+}
+
+.newsTitle {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.newsDate {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.4s ease;
+}
+
+/* Animate date on hover */
+.newsCard:hover .newsDate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg,  #d35400);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-top:25px ;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.9s;
+}
+
+.cta:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(90deg, #046d4d, #d35400); 
+}
+
+.ctaIcon {
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.cta:hover .ctaIcon {
+  transform: translateX(6px);
+}
+
+/* Testimonials */
+.testimonialCard {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.testimonialText {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.authorName {
+  font-weight: 600;
+  margin: 0;
+}
+
+.authorRole {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0;
+}
+
+/* Dots */
+.dots {
+  margin-top: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.activeDot {
+  background: #d35400;
+}

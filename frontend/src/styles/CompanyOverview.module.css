@@ -1,7 +1,7 @@
 .overview {
   position: relative;
   padding: 100px 20px;
-  background: #f8f9fa; /* light background to contrast hero */
+  background: #f8f9fa; 
 }
 
 .container {
@@ -21,7 +21,7 @@
   color: #222;
 }
 
-/* Heading already animated with fadeInUp if needed */
+
 .heading {
   font-size: 2.8rem;
   font-weight: 300;
@@ -31,9 +31,9 @@
   animation: fadeInUp 1s ease forwards;
 }
 
-/* Highlight for dynamic word */
+
 .highlight {
-  color: #046d4d; /* brand green */
+  color: #046d4d; 
   font-weight: 600;
   display: inline-block;
   transition: opacity 0.5s ease;

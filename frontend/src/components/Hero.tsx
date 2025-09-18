@@ -3,11 +3,13 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/Hero.module.css";
 import { FiArrowRight } from "react-icons/fi";
+import EnquiryModal from "./EnquiryModal";
 
 const slides = ["/hero.jpg"];
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(
@@ -47,10 +49,10 @@ export default function Hero() {
 
         <div className={styles.buttons}>
           <button className={styles.cta1}>
-            Explore Services <FiArrowRight className={styles.ctaIcon1} />
+            Explore Products <FiArrowRight className={styles.ctaIcon1} />
           </button>
 
-          <button className={styles.ghostBtn}>
+          <button onClick={() => setIsModalOpen(true)} className={styles.ghostBtn}>
             Request a Quote <FiArrowRight className={styles.ctaIcon2} />
           </button>
         </div>
@@ -66,6 +68,7 @@ export default function Hero() {
           />
         ))}
       </div>
+      <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }

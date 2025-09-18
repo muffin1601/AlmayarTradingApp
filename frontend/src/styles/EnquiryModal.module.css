@@ -1,0 +1,141 @@
+
+
+/* Full-screen overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.705); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.4s ease;
+  z-index: 2000;
+}
+
+/* Modal box */
+.modal {
+  background: #fff;
+  
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  height: 75%;
+  position: relative;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  animation: slideDown 0.5s ease;
+}
+
+.modalTop{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+/* Close button (top-right corner) */
+.closeBtn {
+  
+  
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease;
+}
+.closeBtn:hover {
+  transform: scale(1.1);
+}
+
+/* Title */
+.modalTitle {
+  font-size: 2rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: left;
+  color: #046d4d; 
+  margin-bottom: 15px;
+}
+
+/* Form */
+.form {
+    padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form input,
+.form textarea {
+  padding: 30px 0px;
+  margin: 0 auto;
+  width: 95%;
+  border: none;
+  border-bottom: 1px solid #d1d5db;
+  font-size: 17px;
+  letter-spacing: 1px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form input:focus,
+.form textarea:focus {
+  border-bottom-color: #d35400;
+  outline: none;
+  
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg,  #046d4d, #d35400);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 25px;
+  width: fit-content;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.9s;
+}
+
+.submitBtn:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(90deg,  #d35400); 
+}
+
+.ctaIcon3 {
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.submitBtn:hover .ctaIcon3 {
+  transform: translateX(6px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    background: rgba(15, 23, 42, 0);
+  }
+  to {
+    background: rgba(15, 23, 42, 0.85);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
