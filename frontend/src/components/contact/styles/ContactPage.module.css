@@ -1,14 +1,10 @@
-.contactPage {
-  
- 
+.contactPage__wrapper {
   background-color: #f9f9f9;
   color: #333;
   text-align: center;
 }
 
-
-
-.contactContainer {
+.contactPage__container {
   display: flex;
   flex-direction: row;
   max-width: 1100px;
@@ -18,33 +14,32 @@
   gap: 3rem;
 }
 
-.contactInfo {
+.contactPage__info {
   width: 50%;
-  
   text-align: left;
 }
 
-.contactInfo h2 {
+.contactPage__heading {
   font-size: 2.8rem;
   font-weight: 400;
   display: flex;
   justify-content: left;
-  color: #046d4d; 
+  color: #046d4d;
   margin-bottom: 30px;
 }
 
-.contactInfo p {
-    font-size: 1.3rem;
+.contactPage__text {
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
   line-height: 2;
 }
 
-.whatsapp {
+.contactPage__whatsapp {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background: #25d366; /* WhatsApp green */
+  background: #25d366;
   color: white;
   width: fit-content;
   gap: 10px;
@@ -52,35 +47,44 @@
   font-weight: 500;
 }
 
-.contactForm {
+.contactPage__form {
   width: 50%;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  
   padding: 0 2rem;
-  
-  
 }
 
-.contactFormRow {
+.contactPage__formRow {
   display: flex;
   gap: 10px;
   justify-content: space-between;
 }
 
-.contactFormRow input {
-  width: 48%;
+.contactPage__input {
+  width: 100%;
   padding: 30px 0px;
   border: none;
   border-bottom: 1px solid #d1d5db;
   font-size: 17px;
   letter-spacing: 1px;
+  background-color: transparent;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contactForm input,
-.contactForm textarea {
+.contactPage__formRow .contactPage__input {
+  width: 48%;
+}
+
+.contactPage__input:focus,
+.contactPage__textarea:focus {
+  border-bottom-color: #d35400;
+  outline: none;
+}
+
+.contactPage__textarea {
+  resize: none;
+  width: 100%;
   padding: 30px 0px;
   border: none;
   border-bottom: 1px solid #d1d5db;
@@ -90,18 +94,7 @@
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contactForm input:focus,
-.contactForm textarea:focus {
-  border-bottom-color: #d35400;
-  outline: none;
-}
-
-.contactForm textarea {
-  resize: none;
-  width: 100%;
-}
-
-.submitBtn {
+.contactPage__submitBtn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -109,7 +102,7 @@
   font-size: 16px;
   font-weight: 700;
   color: #fff;
-  background: linear-gradient(90deg, #d35400);
+  background: linear-gradient(90deg, #d35400, #d35400);
   border-radius: 8px;
   border: none;
   cursor: pointer;
@@ -122,25 +115,20 @@
   animation-delay: 0.9s;
 }
 
-.submitBtn:hover {
+.contactPage__submitBtn:hover {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  background: linear-gradient(90deg,#046d4d, #d35400);
+  background: linear-gradient(90deg, #046d4d, #d35400);
 }
 
-.ctaIcon3 {
+.contactPage__ctaIcon {
   font-size: 18px;
   transition: transform 0.3s;
 }
 
-.submitBtn:hover .ctaIcon3 {
+.contactPage__submitBtn:hover .contactPage__ctaIcon {
   transform: translateX(6px);
 }
 
-
-
-.mapContainer {
-  
-  
+.contactPage__map {
   overflow: hidden;
-  
 }

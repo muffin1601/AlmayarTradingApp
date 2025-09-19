@@ -13,79 +13,97 @@ const ContactPage: React.FC = () => {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form Submitted:", formData);
-    // Add API call or email sending logic here
     alert("Your enquiry has been submitted!");
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   return (
-    <div className={styles.contactPage}>
-      
-
-      <div className={styles.contactContainer}>
+    <div className={styles.contactPage__wrapper}>
+      <div className={styles.contactPage__container}>
         {/* Contact Info */}
-        <div className={styles.contactInfo}>
-          <h2>Call Us or Fill the Form</h2>
-          <p>Email: info@almayaar.com</p>
-          <p>Phone: +91-9877777777</p>
-          <p>Address: 123 Market Street, India</p>
-          <a href="https://wa.me/919877777777" className={styles.whatsapp}>
-           <FaWhatsapp size={22} /> WhatsApp
+        <div className={styles.contactPage__info}>
+          <h2 className={styles.contactPage__heading}>
+            Call Us or Fill the Form
+          </h2>
+          <p className={styles.contactPage__text}>Email: info@almayaar.com</p>
+          <p className={styles.contactPage__text}>Phone: +91-9877777777</p>
+          <p className={styles.contactPage__text}>
+            Address: 123 Market Street, India
+          </p>
+          <a
+            href="https://wa.me/919877777777"
+            className={styles.contactPage__whatsapp}
+          >
+            <FaWhatsapp size={22} /> WhatsApp
           </a>
         </div>
 
-        <form className={styles.contactForm} onSubmit={handleSubmit}>
-  <div className={styles.contactFormRow}>
-    <input
-      type="text"
-      name="name"
-      placeholder="Name"
-      value={formData.name}
-      onChange={handleChange}
-      required
-    />
-    <input
-      type="tel"
-      name="phone"
-      placeholder="Phone"
-      value={formData.phone}
-      onChange={handleChange}
-      required
-    />
-  </div>
+        {/* Contact Form */}
+        <form
+          className={styles.contactPage__form}
+          onSubmit={handleSubmit}
+        >
+          <div className={styles.contactPage__formRow}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className={styles.contactPage__input}
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className={styles.contactPage__input}
+            />
+          </div>
 
-  <input
-    type="email"
-    name="email"
-    placeholder="Email"
-    value={formData.email}
-    onChange={handleChange}
-    required
-  />
-  <textarea
-    name="message"
-    placeholder="Message"
-    value={formData.message}
-    onChange={handleChange}
-    required
-  />
-  <button type="submit" className={styles.submitBtn}>
-    Submit <FiArrowRight className={styles.ctaIcon3} />
-  </button>
-</form>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className={styles.contactPage__input}
+          />
+          <textarea
+            name="message"
+            placeholder="Message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            className={styles.contactPage__textarea}
+          />
+          <button
+            type="submit"
+            className={styles.contactPage__submitBtn}
+          >
+            Submit{" "}
+            <FiArrowRight className={styles.contactPage__ctaIcon} />
+          </button>
+        </form>
       </div>
 
-      {/* Optional: Google Map */}
-      <div className={styles.mapContainer}>
+      {/* Map */}
+      <div className={styles.contactPage__map}>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.1234567890!2d90.123456!3d23.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1234567890abcdef!2sAl%20Mayaar!5e0!3m2!1sen!2sin!4v1695199999999!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18..."
           width="100%"
           height="400"
           style={{ border: 0 }}
