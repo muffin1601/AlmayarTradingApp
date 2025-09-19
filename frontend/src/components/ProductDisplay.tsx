@@ -7,14 +7,14 @@ import { useInView } from "./useInView";
 import Image from "next/image"
 
 const products = [
-  { id: 1, name: "Seseme Seeds", image: "/assets/1 (1).jpg" },
-  { id: 2, name: "Shea Nuts", image: "/assets/1 (2).jpg" },
-  { id: 3, name: "Teak Wood", image: "/assets/1 (3).jpg" },
-  { id: 4, name: "Cocoa Beans", image: "/assets/1 (1).jpg" },
-  { id: 5, name: "Cashew Nuts", image: "/assets/1 (3).jpg" },
-  { id: 6, name: "Coffee Beans", image: "/assets/1 (2).jpg" },
-  { id: 7, name: "Almonds", image: "/assets/1 (1).jpg" },
-  { id: 8, name: "Pistachios", image: "/assets/1 (3).jpg" },
+  { id: 1, name: "Seseme Seeds", image: "https://images.pexels.com/photos/614006/pexels-photo-614006.jpeg" },
+  { id: 2, name: "Shea Nuts", image: "https://images.pexels.com/photos/1192053/pexels-photo-1192053.jpeg" },
+  { id: 3, name: "Teak Wood", image: "https://images.pexels.com/photos/5908244/pexels-photo-5908244.jpeg" },
+  { id: 4, name: "Cocoa Beans", image: "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg" },
+  { id: 5, name: "Cashew Nuts", image: "https://images.pexels.com/photos/5507644/pexels-photo-5507644.jpeg" },
+  { id: 6, name: "Coffee Beans", image: "https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg" },
+  { id: 7, name: "Almonds", image: "https://images.pexels.com/photos/1013420/pexels-photo-1013420.jpeg" },
+  { id: 8, name: "Pistachios", image: "https://images.pexels.com/photos/52521/pistachio-nuts-pistachios-crisps-52521.jpeg" },
 ];
 
 export default function ProductDisplay() {
@@ -61,6 +61,7 @@ export default function ProductDisplay() {
                 className={styles.imageProduct}
                 width={300} // Set an appropriate width
                 height={300} // Set an appropriate height
+                unoptimized
               />
               <div className={styles.cardOverlay}>
                 <h3>{product.name}</h3>

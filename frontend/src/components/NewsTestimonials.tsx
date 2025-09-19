@@ -10,17 +10,18 @@ import { useInView } from "./useInView"; // adjust path
 const newsItems = [
   {
     id: 1,
-    title: "New Fabric opening",
-    image: "/assets/1 (1).jpg",
-    date: "Sep 15, 2025",
+    title: "Launch of Bulk Cocoa Beans Export",
+    image: "https://images.pexels.com/photos/4481260/pexels-photo-4481260.jpeg",
+    date: "Sep 10, 2025",
   },
   {
     id: 2,
-    title: "Applied DNA Sciences, WestPoint Home Sign",
-    image: "/assets/1 (2).jpg",
-    date: "Sep 12, 2025",
-  },
+    title: "Cashew Nuts Shipment Arrives at Port",
+    image: "https://images.pexels.com/photos/20149334/pexels-photo-20149334.jpeg",
+    date: "Sep 08, 2025",
+  }
 ];
+
 
 const testimonials = [
   {
