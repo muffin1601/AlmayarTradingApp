@@ -1,0 +1,55 @@
+.missionSection {
+  padding: 80px 20px;
+  background: #f9fafb;
+  border-top: 2px solid #bdbdbd;
+}
+
+.missionContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.missionHeading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: left;
+  color: #111827;
+}
+
+.missionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.missionCard,
+.visionCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.missionSubheading,
+.visionSubheading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #1f2937;
+}
+
+.missionText,
+.visionText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .missionGrid {
+    grid-template-columns: 1fr;
+  }
+}

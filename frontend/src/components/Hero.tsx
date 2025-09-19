@@ -30,10 +30,10 @@ export default function Hero() {
         />
       ))}
 
-      {/* Dark overlay */}
+      
       <div className={styles.overlay} />
 
-      {/* Hero content */}
+      
       <div className={styles.content}>
         <h1>
           Global Import <span className={styles.highlight}>& Export</span>{" "}

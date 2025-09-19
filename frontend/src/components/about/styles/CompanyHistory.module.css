@@ -1,0 +1,72 @@
+.historySection {
+  padding: 60px 20px;
+  background: #fff; 
+}
+
+.historyContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .historyContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.historyContent {
+  text-align: left;
+}
+
+.historyHeading {
+  font-size: 3rem;
+  font-weight: 300;
+  display: flex;
+  justify-content: left;
+  color: #046d4d; 
+  margin-bottom: 15px;
+}
+
+.historyText {
+  color: #333; 
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.historyList {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+.historyList li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #333; 
+  font-weight: 500;
+}
+
+.icon {
+  color: #d35400; 
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.historyImageWrapper {
+  position: relative;
+  text-align: center;
+  height: auto;
+}
+
+.historyImage {
+  height: auto;
+  object-fit: cover;
+}
+
+
