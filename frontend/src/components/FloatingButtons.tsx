@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { FaWhatsapp, FaArrowUp } from "react-icons/fa";
+import { FaWhatsapp} from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import styles from "../styles/FloatingButtons.module.css";
 import EnquiryModal from "./EnquiryModal";

@@ -1,34 +1,31 @@
+"use client";
 
-import { Outfit } from 'next/font/google';
-import "./global.css"; 
+import { ReactNode } from "react";
+import { Outfit } from "next/font/google";
+import "./global.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FloatingButtons from '@/components/FloatingButtons';
+import FloatingButtons from "@/components/FloatingButtons";
 
 const outfit = Outfit({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-export const metadata = {
-  title: "Al Mayar",
-  description: "We supply robust automotive components",
+type RootLayoutProps = {
+  children: ReactNode;
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <>
-    <Header />
     <html lang="en">
-      <body className={outfit.className}>{children}</body>
+      <body className={outfit.className}>
+        <Header />
+        {children}
+        <Footer />
+        <FloatingButtons />
+      </body>
     </html>
-    <Footer />
-    <FloatingButtons />
-    </>
   );
 }

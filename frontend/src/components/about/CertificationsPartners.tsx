@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import styles from "./styles/CertificationsPartners.module.css";
 
 interface Certification {
@@ -61,7 +62,13 @@ const CertificationsPartners: React.FC = () => {
           <div className={styles.grid}>
             {certifications.map((cert, index) => (
               <div key={index} className={styles.card}>
-                <img src={cert.image} alt={cert.name} className={styles.logo} />
+                <Image
+                  src={cert.image}
+                  alt={cert.name}
+                  width={400} // adjust as needed
+                  height={250} // adjust as needed
+                  className={styles.logo}
+                />
                 <h3 className={styles.name}>{cert.name}</h3>
                 <p className={styles.description}>{cert.description}</p>
               </div>
@@ -81,7 +88,13 @@ const CertificationsPartners: React.FC = () => {
                 rel="noopener noreferrer"
                 className={styles.partnerCard}
               >
-                <img src={partner.logo} alt={partner.name} className={styles.partnerLogo} />
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={200} // adjust as needed
+                  height={100} // adjust as needed
+                  className={styles.partnerLogo}
+                />
               </a>
             ))}
           </div>

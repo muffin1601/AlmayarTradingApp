@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import styles from "../styles/CompanyOverview.module.css";
 import { FiArrowRight } from "react-icons/fi";
 import { motion } from "framer-motion";
@@ -14,10 +15,10 @@ export default function CompanyOverview() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(false); 
+      setFade(false);
       setTimeout(() => {
         setIndex((prev) => (prev + 1) % words.length);
-        setFade(true); 
+        setFade(true);
       }, 500);
     }, 2000);
 
@@ -89,9 +90,11 @@ export default function CompanyOverview() {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <div className={styles.imageOverlay} />
-          <img
+          <Image
             src="/about.jpg"
             alt="Company Overview"
+            width={600}   // pick suitable width
+            height={400}  // pick suitable height
             className={styles.imageAbout}
           />
         </motion.div>
