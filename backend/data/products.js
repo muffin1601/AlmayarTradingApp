@@ -13,7 +13,7 @@ module.exports = [
     shelfLife: "12 months if stored properly",
     certifications: "SGS or third-party inspection",
     otherConditions: "As per contract",
-    imageUrl: "/images/cottonseed.jpg",
+    image: "/assets/cotton.webp",
   },
   {
     name: "Sesame Seeds",
@@ -28,7 +28,7 @@ module.exports = [
     shelfLife: "12 months",
     certifications: "SGS available",
     otherConditions: "Negotiable",
-    imageUrl: "/images/sesameseed.jpg",
+    image: "/assets/sesame.webp",
   },
   {
     name: "Raw Cashew Nuts",
@@ -43,7 +43,7 @@ module.exports = [
     shelfLife: "6 months",
     certifications: "SGS or equivalent",
     otherConditions: "As agreed",
-    imageUrl: "/images/cashew.jpg",
+    image: "/assets/cashew.webp",
   },
   {
     name: "Shea Nuts",
@@ -57,7 +57,7 @@ module.exports = [
     shelfLife: "12 months",
     certifications: "SGS or other inspection available",
     otherConditions: "As per buyer request",
-    imageUrl: "/images/sheanuts.jpg",
+    image: "/assets/shea.webp",
   },
   {
     name: "Groundnuts (Peanuts)",
@@ -72,7 +72,7 @@ module.exports = [
     shelfLife: "9 months",
     certifications: "SGS report",
     otherConditions: "Flexible terms",
-    imageUrl: "/images/groundnuts.jpg",
+    image: "/assets/peanuts.webp",
   },
   {
     name: "Soybeans",
@@ -86,7 +86,7 @@ module.exports = [
     shelfLife: "12 months",
     certifications: "SGS, Intertek available",
     otherConditions: "Negotiable",
-    imageUrl: "/images/soybeans.jpg",
+    image: "/assets/soyabean.webp",
   },
   {
     name: "Wheat",
@@ -101,7 +101,7 @@ module.exports = [
     shelfLife: "12 months",
     certifications: "SGS, GAFTA",
     otherConditions: "As per contract",
-    imageUrl: "/images/wheat.jpg",
+    image: "/assets/wheat.webp",
   },
   {
     name: "Maize (Corn)",
@@ -116,7 +116,7 @@ module.exports = [
     shelfLife: "12 months",
     certifications: "SGS/Intertek",
     otherConditions: "Buyer specific",
-    imageUrl: "/images/maize.jpg",
+    image: "/assets/corn.webp",
   },
   {
     name: "Sugar ICUMSA 45",
@@ -131,7 +131,7 @@ module.exports = [
     shelfLife: "24 months",
     certifications: "SGS, ISO",
     otherConditions: "Contract basis",
-    imageUrl: "/images/sugar.jpg",
+    image: "/assets/sugar.webp",
   },
   {
     name: "Rice (Parboiled 5%)",
@@ -146,6 +146,6 @@ module.exports = [
     shelfLife: "24 months",
     certifications: "SGS, Fumigation available",
     otherConditions: "Negotiable",
-    imageUrl: "/images/rice.jpg",
+    image: "/assets/rice.webp",
   },
 ];

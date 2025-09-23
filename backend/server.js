@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 
 const productRoutes = require("./routes/productRoutes.js");
+const blogRoutes = require("./routes/blogRoutes.js");
 
 dotenv.config();
 const app = express();
@@ -14,6 +15,7 @@ app.use(cors());
 
 
 app.use("/api/products", productRoutes);
+app.use("/api/blogs", blogRoutes);
 
 
 mongoose

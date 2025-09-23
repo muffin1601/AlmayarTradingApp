@@ -1,27 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { FiArrowRight } from "react-icons/fi";
 import styles from "../styles/NewsTestimonials.module.css";
-import { motion } from "framer-motion";
-import { useInView } from "./useInView"; // adjust path
 
-const newsItems = [
-  {
-    id: 1,
-    title: "Launch of Bulk Cocoa Beans Export",
-    image: "https://images.pexels.com/photos/4481260/pexels-photo-4481260.jpeg",
-    date: "Sep 10, 2025",
-  },
-  {
-    id: 2,
-    title: "Cashew Nuts Shipment Arrives at Port",
-    image: "https://images.pexels.com/photos/20149334/pexels-photo-20149334.jpeg",
-    date: "Sep 08, 2025",
-  }
-];
-
+type Blog = {
+  id: string | number;
+  title: string;
+  image: string;
+  date: string;
+};
 
 const testimonials = [
   {
@@ -41,75 +30,76 @@ const testimonials = [
 ];
 
 export default function NewsTestimonials() {
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [loading, setLoading] = useState(true);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
 
-  // Hooks for scroll animations
-  const { ref: newsRef, isVisible: newsVisible } = useInView(0.2);
-  const { ref: testiRef, isVisible: testiVisible } = useInView(0.2);
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/blogs`)
+      .then((res) => res.json())
+      .then((data) => {
+        
+        setBlogs(data.slice(0, 2));
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching blogs:", err);
+        setLoading(false);
+      });
+  }, []);
+
+   const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  };
 
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        {/* News */}
-        <motion.div
-          ref={newsRef}
-          className={styles.news}
-          initial={{ opacity: 0, x: -60 }}
-          animate={newsVisible ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8 }}
-        >
+        
+        <div className={styles.news}>
           <h2 className={styles.heading}>News</h2>
           <div className={styles.newsGrid}>
-            {newsItems.map((item, i) => (
-              <motion.div
-                key={item.id}
-                className={styles.newsCard}
-                initial={{ opacity: 0, y: 40 }}
-                animate={newsVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: i * 0.2 }}
-              >
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={400}
-                  height={250}
-                  className={styles.newsImage}
-                />
-                <div className={styles.newsContent}>
-                  <div className={styles.newsTitle}>{item.title}</div>
-                  <span className={styles.newsDate}>{item.date}</span>
+            {loading ? (
+              <p>Loading...</p>
+            ) : (
+              blogs.map((item, idx) => (
+                <div key={item.id ?? idx} className={styles.newsCard}>
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={400}
+                    height={250}
+                    className={styles.newsImage}
+                  />
+                  <div className={styles.newsContent}>
+                    <div className={styles.newsTitle}>{item.title}</div>
+                    <span className={styles.newsDate}>
+                      {formatDate(item.date)}
+                    </span>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
+              ))
+            )}
           </div>
-          <motion.button
+          <button
+            onClick={() => (window.location.href = "/blogs")}
             className={styles.cta}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={newsVisible ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.6 }}
           >
             Blogs <FiArrowRight className={styles.ctaIcon} />
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
 
-        {/* Testimonials */}
-        <motion.div
-          ref={testiRef}
-          className={styles.testimonials}
-          initial={{ opacity: 0, x: 60 }}
-          animate={testiVisible ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8 }}
-        >
+        
+        <div className={styles.testimonials}>
           <h2 className={`${styles.heading} ${styles.testimonialHeading}`}>
             Testimonials
           </h2>
-          <motion.div
-            className={styles.testimonialCard}
-            key={testimonials[testimonialIndex].id} // force re-animates when index changes
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className={styles.testimonialCard}>
             <p className={styles.testimonialText}>
               “{testimonials[testimonialIndex].text}”
             </p>
@@ -134,15 +124,14 @@ export default function NewsTestimonials() {
               {testimonials.map((_, idx) => (
                 <span
                   key={idx}
-                  className={`${styles.dot} ${
-                    idx === testimonialIndex ? styles.activeDot : ""
-                  }`}
+                  className={`${styles.dot} ${idx === testimonialIndex ? styles.activeDot : ""
+                    }`}
                   onClick={() => setTestimonialIndex(idx)}
                 />
               ))}
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -21,7 +21,7 @@ export default function Hero() {
 
   return (
     <section className={styles.hero}>
-      {/* Slides */}
+      
       {slides.map((img, i) => (
         <div
           key={i}
@@ -48,7 +48,7 @@ export default function Hero() {
         </p>
 
         <div className={styles.buttons}>
-          <button className={styles.cta1}>
+          <button onClick={() => (window.location.href = "/products")} className={styles.cta1}>
             Explore Products <FiArrowRight className={styles.ctaIcon1} />
           </button>
 

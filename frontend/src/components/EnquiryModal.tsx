@@ -1,4 +1,4 @@
-"use client";
+
 import styles from "../styles/EnquiryModal.module.css";
 import { FiArrowRight } from "react-icons/fi";
 

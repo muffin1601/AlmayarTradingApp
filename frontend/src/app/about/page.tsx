@@ -3,8 +3,9 @@ import CompanyHistory from "@/components/about/CompanyHistory";
 import MissionVision from "@/components/about/MissionVision";
 import Team from "@/components/about/Team";
 import CertificationsPartners from "@/components/about/CertificationsPartners";
+import ContactCTA from "@/components/ContactCTA";
 
-export default function Home() {
+export default function About() {
   return (
     <>
       <PageHeader
@@ -20,7 +21,10 @@ export default function Home() {
       <MissionVision />
       <Team />
       <CertificationsPartners />
-
+      <ContactCTA
+        heading="Want to Learn More About Us?"
+        subheading="Get in touch to discover our story, our mission, and how we can work together to create something exceptional."
+      />
     </>
   );
 }

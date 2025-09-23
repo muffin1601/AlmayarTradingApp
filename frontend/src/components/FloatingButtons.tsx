@@ -1,4 +1,4 @@
-"use client";
+
 import { useEffect, useState } from "react";
 import { FaWhatsapp} from "react-icons/fa";
 import { FiMail } from "react-icons/fi";

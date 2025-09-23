@@ -28,7 +28,7 @@ export default function NavbarMain() {
           <Link href="/">Home</Link>
           <Link href="/products">Products</Link>
           <Link href="/about">About Us</Link>
-          <Link href="/blog">Blog</Link>
+          <Link href="/blogs">Blog</Link>
           <Link href="/contact">Contact</Link>
         </nav>
 

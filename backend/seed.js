@@ -14,7 +14,7 @@ const productSchema = new mongoose.Schema({
   shelfLife: String,
   certifications: String,
   otherConditions: String,
-  imageUrl: String,
+  image: String,
 });
 
 const Product = mongoose.model("Product", productSchema);

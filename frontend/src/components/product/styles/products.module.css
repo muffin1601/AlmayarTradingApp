@@ -1,130 +1,306 @@
-/* products.module.css */
+.productSection {
+  border-top: 2px solid #bdbdbd;
+  position: relative;
+  padding: 80px 20px;
+  background: #fff;
+  overflow: hidden;
+}
 
 .container {
-  padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  color: #046d4d;
+  margin-bottom: 15px;
+}
+
+.subheading {
+  font-size: 1.1rem;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+  text-align: center;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
 }
 
 .card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
   cursor: pointer;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+.imageWrapper {
+  position: relative; 
+  width: 100%;        
+  height: 250px;      
+  overflow: hidden;   
 }
 
-.card h2 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 0.5rem;
-  color: #111827;
+.imageProduct {
+ 
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-/* Modal overlay */
+.card:hover .imageProduct {
+  transform: scale(1.05);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  opacity: 1;
+  transition: background 0.3s;
+}
+
+.cardOverlay:hover {
+  background: rgba(0,0,0,0);
+}
+
+.cardOverlay h3 {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.cardOverlay button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.cardOverlay button:hover .IconArrow2 {
+  transform: translateX(6px);
+}
+
+.IconArrow2 {
+  font-size: 20px;
+  transition: transform 0.3s;
+}
+
+.card:hover .cardOverlay h3,
+.card:hover .cardOverlay button {
+  color: #fff;
+}
+
+/* Full-screen overlay */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.705);
   display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.4s ease;
+  z-index: 2000;
+}
+
+/* Modal box */
+.modal {
+  background: #fff;
+  padding: 30px;
+  width: 90%;
+  max-width: 1000px;
+  min-height: 50%;
+  position: relative;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  animation: slideDown 0.5s ease;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Top bar */
+.modalTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modalTitle {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #046d4d;
+}
+
+/* Close button */
+.closeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 28px;
+  color: #333;
+  transition: transform 0.2s ease;
+}
+.closeBtn:hover {
+  transform: scale(1.1);
+}
+
+.modalContent {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap; 
+}
+
+.modalImageWrapper {
+  flex: 1;       
+  min-width: 500px;
+  height: 500px; 
+  position: relative;
+}
+
+.modalDetails {
+  flex: 2;       
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.modalDetails p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* CTA button */
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg,  #d35400);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 15px;
+  width: fit-content;
+}
+
+.submitBtn:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(90deg, #d35400, #046d4d);
+}
+
+.ctaIcon3 {
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+.submitBtn:hover .ctaIcon3 {
+  transform: translateX(6px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    background: rgba(15, 23, 42, 0);
+  }
+  to {
+    background: rgba(15, 23, 42, 0.85);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Loader wrapper */
+.loaderWrapper {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  height: 70vh;
+  gap: 20px;
 }
 
-/* Modal content */
-.modal {
-  background: #ffffff;
-  max-width: 700px;
-  width: 100%;
-  border-radius: 12px;
-  padding: 2rem;
-  position: relative;
-  max-height: 90vh;
-  overflow-y: auto;
+/* Premium spinner */
+.loader {
+  width: 70px;
+  height: 70px;
+  border: 6px solid rgba(0, 0, 0, 0.1);
+  border-top: 6px solid #046d4d; /* primary color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 20px rgba(4, 109, 77, 0.4);
 }
 
-.closeBtn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1.5rem;
-  border: none;
-  background: none;
-  cursor: pointer;
-  color: #374151;
-  transition: color 0.2s ease;
+/* Loader text */
+.loaderText {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #444;
+  letter-spacing: 0.5px;
+  animation: fadeIn 1.2s ease infinite alternate;
 }
 
-.closeBtn:hover {
-  color: #ef4444;
+/* Spin animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-.modal h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #111827;
-}
-
-.modalImage {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.modal p {
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
-  color: #374151;
-}
-
-.addToCart {
-  display: inline-block;
-  background-color: #ef4444;
-  color: #ffffff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  margin-top: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.addToCart:hover {
-  background-color: #dc2626;
-}
-
-/* Scrollbar for modal if content overflows */
-.modal::-webkit-scrollbar {
-  width: 6px;
-}
-
-.modal::-webkit-scrollbar-thumb {
-  background-color: rgba(107, 114, 128, 0.6);
-  border-radius: 3px;
-}
-
-.modal::-webkit-scrollbar-track {
-  background: transparent;
+/* Fade animation for text */
+@keyframes fadeIn {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
 }

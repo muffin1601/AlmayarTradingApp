@@ -4,14 +4,11 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "../styles/CompanyOverview.module.css";
 import { FiArrowRight } from "react-icons/fi";
-import { motion } from "framer-motion";
-import { useInView } from "./useInView"; // adjust path if needed
 
 export default function CompanyOverview() {
   const words = ["Company", "Vision", "Mission"];
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(true);
-  const { ref, isVisible } = useInView(0.2);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,41 +23,22 @@ export default function CompanyOverview() {
   }, [words.length]);
 
   return (
-    <section className={styles.overview} ref={ref}>
+    <section className={styles.overview}>
       <div className={styles.container}>
         {/* Text Block */}
-        <motion.div
-          className={styles.textBlock}
-          initial={{ opacity: 0, y: 40 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-        >
+        <div className={styles.textBlock}>
           <h2 className={styles.heading}>
             Our{" "}
-            <span
-              className={`${styles.highlight} ${
-                fade ? styles.fadeIn : styles.fadeOut
-              }`}
-            >
+            <span className={`${styles.highlight} ${fade ? styles.fadeIn : styles.fadeOut}`}>
               {words[index]}
             </span>
           </h2>
 
-          <motion.p
-            className={styles.subheading}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
+          <p className={styles.subheading}>
             Trusted Import & Export Partner Worldwide
-          </motion.p>
+          </p>
 
-          <motion.p
-            className={styles.description}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.4 }}
-          >
+          <p className={styles.description}>
             At <strong>Al Mayaar</strong>, we specialize in bridging markets by
             connecting businesses across the globe. With expertise in sourcing,
             logistics, and international trade, we deliver seamless import and
@@ -70,34 +48,24 @@ export default function CompanyOverview() {
             Our commitment to quality, transparency, and customer satisfaction
             makes us the partner of choice for companies seeking reliable global
             trade solutions.
-          </motion.p>
+          </p>
 
-          <motion.button
-            className={styles.cta}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
+          <button  onClick={() => (window.location.href = "/about")} className={styles.cta}>
             Read More <FiArrowRight className={styles.ctaIcon} />
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
 
         {/* Image Block */}
-        <motion.div
-          className={styles.imageBlock}
-          initial={{ opacity: 0, x: 60 }}
-          animate={isVisible ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
+        <div className={styles.imageBlock}>
           <div className={styles.imageOverlay} />
           <Image
             src="/about.jpg"
             alt="Company Overview"
-            width={600}   // pick suitable width
-            height={400}  // pick suitable height
+            width={600}
+            height={400}
             className={styles.imageAbout}
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

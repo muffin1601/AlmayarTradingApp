@@ -2,7 +2,7 @@ import PageHeader from "@/components/PageHeader";
 
 import ContactPage from "@/components/contact/ContactPage";
 
-export default function Home() {
+export default function Contact() {
     return (
         <>
             <PageHeader
@@ -14,8 +14,6 @@ export default function Home() {
                     { label: "Contact Us" },
                 ]}
             />
-
-
 <ContactPage />
         </>
     );

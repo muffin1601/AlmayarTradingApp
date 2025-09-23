@@ -1,6 +1,3 @@
-// src/components/Footer.tsx
-
-"use client";
 
 import Image from "next/image";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
@@ -12,7 +9,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         
-        {/* Column 1: Logo & About Us */}
+        
         <div className={styles.column}>
           <Image
             src="/logo-footer.png"
@@ -26,7 +23,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Column 2: Contact Us */}
+      
         <div className={styles.column}>
           <h3>Contact Us</h3>
           <p>Email: info@example.com</p>
@@ -34,11 +31,11 @@ export default function Footer() {
           <p>Address: 123 Corporate Park, Delhi, India</p>
         </div>
 
-        {/* Column 3: Sitemap */}
+       
         <div className={styles.column}>
           <h3>Sitemap</h3>
           <ul>
-            {/* FIX: Replaced <a> with <Link> for internal links */}
+            
             <li><Link href="/">Home</Link></li>
             <li><Link href="/products">Products</Link></li>
             <li><Link href="/about">About Us</Link></li>
@@ -47,11 +44,11 @@ export default function Footer() {
           </ul>
         </div>
         
-        {/* Column 4: Social Icons */}
+       
         <div className={styles.column}>
           <h3>Follow Us</h3>
           <div className={styles.social}>
-            {/* These are external links, so <a> is correct */}
+            
             <a href="#"><FaFacebookF /></a>
             <a href="#"><FaTwitter /></a>
             <a href="#"><FaInstagram /></a>

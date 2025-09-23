@@ -1,8 +1,9 @@
+import ContactCTA from "@/components/ContactCTA";
 import PageHeader from "@/components/PageHeader";
 
 import ProductPage from "@/components/product/ProductsPage";
 
-export default function Home() {
+export default function Product() {
     return (
         <>
             <PageHeader
@@ -14,7 +15,12 @@ export default function Home() {
                     { label: "Products" },
                 ]}
             />
-<ProductPage />
+            <ProductPage />
+            <ContactCTA
+                heading="Questions About Our Products?"
+                subheading="Whether you need more details, pricing information, or advice on which product fits your needs, our team is here to help."
+            />
+
         </>
     );
 }
